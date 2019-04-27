@@ -26,7 +26,7 @@
 
 (define (main)
 
-    (define x ((define (zurp x) (define y (+ x 1)) this) 5))  
+    ; (define x ((define (zurp x) (define y (+ x 1)) this) 5))  
     ; (ppTable x)
     ; (ppTable (get '__context x))
     ; (ppTable this)
