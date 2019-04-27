@@ -26,33 +26,52 @@
 ;     (inspect code-tree)
 ; )
 
-(define (display-n-tree tree n) 
-    (cond 
-        ( (and (> 0 n) (not (null? tree)))
-            (println tree)
-            (display-n-tree (car tree) (- n  1))
-            (display-n-tree (cdr tree) (- n  1)) 
+
+(define  (replace tree sym rep)
+    (cond
+        ((atom? tree) 
+            ; (println "atom--" tree)
+        )
+        ((pair? tree) 
+            (cond
+                ((object? tree))
+                ((quote? tree))
+                (else 
+                    ; (println "tree--" tree)
+                    (cond
+                        ((eq? (car tree) sym) 
+                            ; (println "replacing " sym " with " rep)
+                            (set-car! tree rep) 
+                        )
+
+                    )
+                    (replace (car tree) sym rep)
+                    (replace (cdr tree) sym rep)
+                )
+            )
+        )
+        (else
+            ; (println tree)
+            ;(stepper (car tree))
+            ;(stepper (cdr tree))
         )
     )
-    
+)
+
+(define (displaypair t)
+
+    (println "car " (car t))
+    (println "cdr " (cdr t))
 )
 
 
 ; make sure you dont skip over the word quoted so we know when to not replace quoted strings
 (define (main)
 
-    (define (square x) (* x x) (println "test 6 here"))
+    (define (square x) (* x x) )
     (define body (get 'code square))
-    (inspect (cdr body))
-
-    (display-n-tree body 5)
-    ; (set 'code '(begin (+ x x)) square)
-
-
-    ;(inspect (square 5))
-
-    ;(inspect (cdr '(begin (+ x x))))
-    ;(inspect (car '(begin (+ x x))))
+    (replace body '* '+)
+    (println (square 5))
 
 
 )
