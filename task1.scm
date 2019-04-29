@@ -1,23 +1,22 @@
 
 (define (scoping sym obj)
-    (define level (get '__level obj))
 
-    (define (scoper new-obj)
+    (define (scoper new-obj level)
         (cond 
             ((null? new-obj) 'undefined)
             ; ((local? sym new-obj) (println "found on level " (get '__level new-obj) " looking for level " level))
             ((local? sym new-obj)
-                (if (eq? level (get '__level new-obj))
+                (if (eq? level 0)
                     ;(println "bound")
                     'bound
                     ;(println "free")
                     'free
                 )
             )
-            (else (scoper (get '__context new-obj)))
+            (else (scoper (get '__context new-obj) (+ level 1)))
         )
     )
-    (scoper obj)
+    (scoper obj 0)
 )
 
 
