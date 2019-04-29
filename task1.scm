@@ -1,7 +1,4 @@
 
-
-
-
 (define (scoping sym obj)
     (define level (get '__level obj))
 

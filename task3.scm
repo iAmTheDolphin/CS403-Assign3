@@ -106,6 +106,48 @@
         ((tail 'set-prev!) temp)
     )
 
+    (define (dequeueIndex-helper-head i node)
+        (cond
+            ((null? node) (println "ERROR--Attempted to dequeue at index out of range"))
+            ((== i 0) 
+                (define rm-node node)
+                (define prev (node 'get-prev))
+                (define next (node 'get-next))
+                ((prev 'set-next!) next)
+                ((next 'set-prev!) prev)
+                rm-node
+            )
+            (else
+                (dequeueIndex-helper-head (- i 1) (node 'get-next))
+            )
+        )
+    )
+
+    (define (dequeueIndex-helper-tail i node)
+        (cond
+            ((null? node) (println "ERROR--Attempted to dequeue at index out of range"))
+            ((== i 0)
+                (define rm-node node)
+                (define prev (node 'get-prev))
+                (define next (node 'get-next))
+                ((prev 'set-next!) next)
+                ((next 'set-prev!) prev)
+                rm-node
+            )
+            (else
+                (dequeueIndex-helper-tail (- i 1) (node 'get-prev))
+            )
+        )
+    )
+
+    (define (dequeueIndex i)
+        (define midIndex (/ size 2))
+        (cond
+            ((> i midIndex) (dequeueIndex-helper-tail (- size i) tail))
+            (else (dequeueIndex-helper-head i (head 'get-next)))
+        )
+    )
+
     (define (enqueueIndex-helper-tail v i n)
         (cond
             ((null? n) (println "ERROR--Attempted to enqueue at index out of range"))
@@ -203,9 +245,7 @@
         )
     )
 
-    (define (dequeueIndex i)
     
-    )
 
     (define (display-helper n)
         (print (n 'get-data))
@@ -221,7 +261,10 @@
 
     (define (display)
         (print "[")
-        (display-helper (head 'get-next))
+        (if (eq? (head 'get-next) tail)
+            0
+            (display-helper (head 'get-next))
+        )
         (print "]")
     )
 

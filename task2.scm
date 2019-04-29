@@ -26,36 +26,78 @@
 ;     (inspect code-tree)
 ; )
 
+(define (debug @)
+    (define db? #t)
+    (if db? (println @))
+)
 
-(define  (replace tree sym rep)
-    (cond
-        ((atom? tree) 
-            ; (println "atom--" tree)
-        )
-        ((pair? tree) 
+
+(define  (replace fun sym-list)
+
+    (define (in-sym-list? sym)
+        (println "checking sym-list for " sym)
+
+        (define (iter n)
             (cond
-                ((object? tree))
-                ((quote? tree))
+                ((null? n) #f) ;end of sym list
+                ((null? (cdr n)) #f)
+                ((eq? (car n) sym)
+                    #t
+                )
                 (else 
-                    ; (println "tree--" tree)
-                    (cond
-                        ((eq? (car tree) sym) 
-                            ; (println "replacing " sym " with " rep)
-                            (set-car! tree rep) 
-                        )
-
-                    )
-                    (replace (car tree) sym rep)
-                    (replace (cdr tree) sym rep)
+                    (iter (cddr n))
                 )
             )
         )
-        (else
-            ; (println tree)
-            ;(stepper (car tree))
-            ;(stepper (cdr tree))
+        (iter sym-list)
+    )
+
+    (define (find-replacement sym)
+        (println "replacing " sym)
+        ; n is the cons cell of the replacement list. its car will be the symbol to be replaced, its cadr will be what to replace it with
+        (define (iter n)
+            (cond
+                ((null? n) nil) ; end of sym list
+                ((eq? (car n) sym) ; 
+                    (cadr n)
+                )
+                (else 
+                    (iter (cddr n)) ;to skip the replacement value we do cddr
+                )
+            )
+        )
+        (iter sym-list)
+    
+    )
+
+    (define (replace-iter node)
+        (debug "calling replace-iter")
+        (cond
+            ((null? node))
+            ((object? node))
+            ((eq? (car node) 'quote) 
+                (debug "quote") 
+                (cond
+                    ((in-sym-list? (car node)) set-car! (find-replacement (car node)))
+                )
+            )
+            ((pair? node)
+                (debug "pair")
+                (debug (eq? (type  node) 'CONS))
+                ; (println "tree--" tree)
+                (replace-iter (car node))
+                (replace-iter (cdr node))
+            )
+            (else
+                (debug "otherwise " node)
+                ((in-sym-list? (car node))
+                    (set-car! (find-replacement (car node))) 
+                )
+                (replace-iter (cdr node))
+            )
         )
     )
+    (replace-iter (cadr (get 'code fun)))
 )
 
 (define (displaypair t)
@@ -65,14 +107,79 @@
 )
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(define (replace f items)
+
+    (define (in-list? n l)
+        (cond 
+            ((null? (cddr sym-list))
+                (if (eq? (car sym-list) temp)
+                    (cadr sym-list)
+                    temp
+                )
+                (if (eq? (car sym-list) temp)
+                    (cadr sym-list)
+                    (check temp (cddr sym-list))
+                )
+            )
+        )
+    )
+
+    (define (check temp sym-list)
+        (if (null? (cddr sym-list))
+            (if (eq? (car sym-list) temp)
+                (cadr sym-list)
+                temp
+            )
+            (if (eq? (car sym-list) temp)
+                (cadr sym-list)
+                (check temp (cddr sym-list))
+            )
+        )
+    )
+
+    (define (iter node)
+        (cond
+            ((null? node) node)
+            ((object? (car node)) node)
+            ((eq? (car node) 'quote) 
+                (set-car! node (check (car node) items))
+            )
+            ((eq? (type (car node)) 'CONS)
+                (iter (car node))
+                (iter (cdr node))
+            )
+            (else
+                (set-car! node (check (car node) items))
+                (iter (cdr node))
+                )
+            )
+        )
+
+    (iter (get 'parameters f))
+    (iter (cadr (get 'code f)))
+    )
+
 ; make sure you dont skip over the word quoted so we know when to not replace quoted strings
 (define (main)
 
-    (define (square x) (* x x) )
-    (define body (get 'code square))
-    (replace body '* '+)
-    (println (square 5))
-
+    (define (abs n) (if (< n 0) (- n) n))
+    (replace abs (list '< > '- +))
+    (inspect (get 'code abs))
 
 )
 
