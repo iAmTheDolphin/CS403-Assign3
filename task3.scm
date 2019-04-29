@@ -1,3 +1,5 @@
+(define (debug @) (define db? #t) (if db? (apply println @)))
+
 (define (deque)
 
     (define (node)
@@ -110,6 +112,7 @@
         (cond
             ((null? node) (println "ERROR--Attempted to dequeue at index out of range"))
             ((== i 0) 
+                (-- size)
                 (define rm-node node)
                 (define prev (node 'get-prev))
                 (define next (node 'get-next))
@@ -127,9 +130,10 @@
         (cond
             ((null? node) (println "ERROR--Attempted to dequeue at index out of range"))
             ((== i 0)
+                (-- size)
                 (define rm-node node)
-                (define prev (node 'get-prev))
-                (define next (node 'get-next))
+                (define prev (rm-node 'get-prev))
+                (define next (rm-node 'get-next))
                 ((prev 'set-next!) next)
                 ((next 'set-prev!) prev)
                 rm-node
@@ -143,7 +147,12 @@
     (define (dequeueIndex i)
         (define midIndex (/ size 2))
         (cond
-            ((> i midIndex) (dequeueIndex-helper-tail (- size i) tail))
+            ((> i midIndex) 
+                (if (== (- size i) 0) 
+                    (println "ERROR--tried to remove tail. index out of bounds")
+                    (dequeueIndex-helper-tail (- size i) tail)
+                )
+            )
             (else (dequeueIndex-helper-head i (head 'get-next)))
         )
     )
