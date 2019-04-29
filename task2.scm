@@ -28,158 +28,73 @@
 
 (define (debug @)
     (define db? #t)
-    (if db? (println @))
+    (if db? (apply println @))
 )
 
 
-(define  (replace fun sym-list)
 
-    (define (in-sym-list? sym)
-        (println "checking sym-list for " sym)
+(define (replace f replace-list)
 
-        (define (iter n)
-            (cond
-                ((null? n) #f) ;end of sym list
-                ((null? (cdr n)) #f)
-                ((eq? (car n) sym)
-                    #t
-                )
-                (else 
-                    (iter (cddr n))
-                )
+    (define (in-list? n sym-list)
+        (cond
+            ((null? sym-list) #f)
+            ((eq? (car sym-list) n)  #t)
+            ((null? (cddr sym-list)) #f)
+            (else 
+                (in-list? n (cddr sym-list))
             )
         )
-        (iter sym-list)
     )
 
-    (define (find-replacement sym)
-        (println "replacing " sym)
-        ; n is the cons cell of the replacement list. its car will be the symbol to be replaced, its cadr will be what to replace it with
-        (define (iter n)
-            (cond
-                ((null? n) nil) ; end of sym list
-                ((eq? (car n) sym) ; 
-                    (cadr n)
-                )
-                (else 
-                    (iter (cddr n)) ;to skip the replacement value we do cddr
-                )
+    (define (get-from-list n sym-list)
+        (cond
+            ((null? sym-list) (println "ERROR--reached end of list without finding replacement"))
+            ((eq? (car sym-list) n)  (cadr sym-list)) ;return what needs to be replaced with
+            (else 
+                (get-from-list n (cddr sym-list))
             )
         )
-        (iter sym-list)
-    
     )
 
     (define (replace-iter node)
-        (debug "calling replace-iter")
         (cond
-            ((null? node))
-            ((object? node))
-            ((eq? (car node) 'quote) 
-                (debug "quote") 
-                (cond
-                    ((in-sym-list? (car node)) set-car! (find-replacement (car node)))
+            ((null? node) node) ; null? stop doing stuff
+            ((object? (car node)) node) ; dont mess with objects
+            ((eq? (car node) 'quote)  ; dont recur cdr
+                (if (in-list? (car node) replace-list)   
+                    (set-car! node (get-from-list (car node) replace-list))
                 )
             )
-            ((pair? node)
-                (debug "pair")
-                (debug (eq? (type  node) 'CONS))
-                ; (println "tree--" tree)
+            ((pair? (car node))
                 (replace-iter (car node))
                 (replace-iter (cdr node))
             )
             (else
-                (debug "otherwise " node)
-                ((in-sym-list? (car node))
-                    (set-car! (find-replacement (car node))) 
+                (if (in-list? (car node) replace-list)   
+                    (set-car! node (get-from-list (car node) replace-list))
                 )
                 (replace-iter (cdr node))
             )
         )
     )
-    (replace-iter (cadr (get 'code fun)))
+
+    (replace-iter (get 'parameters f))
+    (replace-iter (cadr (get 'code f)))
 )
-
-(define (displaypair t)
-
-    (println "car " (car t))
-    (println "cdr " (cdr t))
-)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-(define (replace f items)
-
-    (define (in-list? n l)
-        (cond 
-            ((null? (cddr sym-list))
-                (if (eq? (car sym-list) temp)
-                    (cadr sym-list)
-                    temp
-                )
-                (if (eq? (car sym-list) temp)
-                    (cadr sym-list)
-                    (check temp (cddr sym-list))
-                )
-            )
-        )
-    )
-
-    (define (check temp sym-list)
-        (if (null? (cddr sym-list))
-            (if (eq? (car sym-list) temp)
-                (cadr sym-list)
-                temp
-            )
-            (if (eq? (car sym-list) temp)
-                (cadr sym-list)
-                (check temp (cddr sym-list))
-            )
-        )
-    )
-
-    (define (iter node)
-        (cond
-            ((null? node) node)
-            ((object? (car node)) node)
-            ((eq? (car node) 'quote) 
-                (set-car! node (check (car node) items))
-            )
-            ((eq? (type (car node)) 'CONS)
-                (iter (car node))
-                (iter (cdr node))
-            )
-            (else
-                (set-car! node (check (car node) items))
-                (iter (cdr node))
-                )
-            )
-        )
-
-    (iter (get 'parameters f))
-    (iter (cadr (get 'code f)))
-    )
 
 ; make sure you dont skip over the word quoted so we know when to not replace quoted strings
 (define (main)
+    (define (iterator env)
+        (cond 
+            ((eof?) 0)
+            (else 
+                (eval (readExpr) env)
+                (iterator env)
+            )
+        )
+    )
 
-    (define (abs n) (if (< n 0) (- n) n))
-    (replace abs (list '< > '- +))
-    (inspect (get 'code abs))
-
+    (setPort (open (getElement ScamArgs 1) 'read))
+    (iterator this)
 )
 

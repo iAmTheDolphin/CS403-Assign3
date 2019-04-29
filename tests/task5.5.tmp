@@ -1,0 +1,5 @@
+op is <builtin -(@)>
+1 1 1 1 1 ...
+------------------------------------
+EXCEPTION: generalException
+file main.lib,line 428: attempt to take car of type INTEGER
