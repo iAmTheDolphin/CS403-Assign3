@@ -65,7 +65,7 @@
 
 (define (nor-gate a b c)
     (let (
-            (a-li (make-wire))
+            (a-l1 (make-wire))
             (b-l1 (make-wire))
             (ab-l2 (make-wire))
         )
