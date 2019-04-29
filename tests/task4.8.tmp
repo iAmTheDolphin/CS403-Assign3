@@ -15,10 +15,10 @@ output is 0
 ---------------
 1 XNOR 1
 ---------------
-out 60  New-value = 1
+out 48  New-value = 1
 output is 1
 ---------------
 1 XNOR 0
 ---------------
-out 84  New-value = 0
+out 60  New-value = 0
 output is 0

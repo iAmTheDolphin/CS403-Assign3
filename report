@@ -2645,16 +2645,16 @@ output is 0
 ---------------
 1 XNOR 1
 ---------------
-out 60  New-value = 1
+out 48  New-value = 1
 output is 1
 ---------------
 1 XNOR 0
 ---------------
-out 84  New-value = 0
+out 60  New-value = 0
 output is 0
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task4.8.expected and ./tests/task4.8.tmp differ
+Files ./tests/task4.8.expected and ./tests/task4.8.tmp are identical
 
 
 Testing task4.scm on task4.9. . .
@@ -2745,9 +2745,76 @@ sum is 0
 carry is 1
 ------------------------------------
 YOUR RESULTS: 
+
+sum 0  New-value = 0
+carry 0  New-value = 0
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+carry 6  New-value = 1
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+sum 6  New-value = 1
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+carry 12  New-value = 0
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+sum 12  New-value = 0
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+sum 18  New-value = 1
+NAND active!
+NAND active!
+NAND active!
+sum 24  New-value = 0
+NAND active!
+NAND active!
+NAND active!
+sum 30  New-value = 1
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+carry 42  New-value = 1
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+sum 60  New-value = 0
+NAND active!
+sum is 0
+carry is 1
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task4.9.expected and ./tests/task4.9.tmp differ
+Files ./tests/task4.9.expected and ./tests/task4.9.tmp are identical
 
 
 Testing task4.scm on task4.10. . .
@@ -2817,9 +2884,55 @@ sum is 0
 carry is 0
 ------------------------------------
 YOUR RESULTS: 
+
+sum 0  New-value = 0
+carry 0  New-value = 0
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+carry 6  New-value = 1
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+sum 6  New-value = 1
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+carry 12  New-value = 0
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+sum 12  New-value = 0
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+sum 18  New-value = 1
+NAND active!
+NAND active!
+sum 24  New-value = 0
+NAND active!
+NAND active!
+sum is 0
+carry is 0
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task4.10.expected and ./tests/task4.10.tmp differ
+Files ./tests/task4.10.expected and ./tests/task4.10.tmp are identical
 
 
 Testing task4.scm on task4.11. . .
@@ -2897,9 +3010,63 @@ sum is 1
 carry is 0
 ------------------------------------
 YOUR RESULTS: 
+
+sum 0  New-value = 0
+carry 0  New-value = 0
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+carry 6  New-value = 1
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+sum 6  New-value = 1
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+carry 12  New-value = 0
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+sum 12  New-value = 0
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+sum 18  New-value = 1
+NAND active!
+NAND active!
+sum 24  New-value = 0
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+sum 48  New-value = 1
+NAND active!
+sum is 1
+carry is 0
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task4.11.expected and ./tests/task4.11.tmp differ
+Files ./tests/task4.11.expected and ./tests/task4.11.tmp are identical
 
 
 Testing task4.scm on task4.12. . .
@@ -2977,9 +3144,63 @@ sum is 1
 carry is 0
 ------------------------------------
 YOUR RESULTS: 
+
+sum 0  New-value = 0
+carry 0  New-value = 0
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+carry 6  New-value = 1
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+sum 6  New-value = 1
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+carry 12  New-value = 0
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+sum 12  New-value = 0
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+sum 18  New-value = 1
+NAND active!
+NAND active!
+NAND active!
+sum 24  New-value = 0
+NAND active!
+NAND active!
+NAND active!
+sum 30  New-value = 1
+NAND active!
+sum is 1
+carry is 0
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task4.12.expected and ./tests/task4.12.tmp differ
+Files ./tests/task4.12.expected and ./tests/task4.12.tmp are identical
 
 
 Testing task4.scm on task4.13. . .
@@ -3055,9 +3276,44 @@ NAND active!
 output is 0
 ------------------------------------
 YOUR RESULTS: 
+
+out 0  New-value = 0
+---------------
+0 AND 0
+---------------
+NAND active!
+NAND active!
+NAND active!
+out 6  New-value = 1
+NAND active!
+NAND active!
+out 12  New-value = 0
+NAND active!
+output is 0
+---------------
+0 AND 1
+---------------
+NAND active!
+output is 0
+---------------
+1 AND 1
+---------------
+NAND active!
+NAND active!
+out 30  New-value = 1
+NAND active!
+output is 1
+---------------
+1 AND 0
+---------------
+NAND active!
+NAND active!
+out 42  New-value = 0
+NAND active!
+output is 0
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task4.13.expected and ./tests/task4.13.tmp differ
+Files ./tests/task4.13.expected and ./tests/task4.13.tmp are identical
 
 
 Testing task4.scm on task4.14. . .
@@ -3136,9 +3392,47 @@ NAND active!
 output is 1
 ------------------------------------
 YOUR RESULTS: 
+
+out 0  New-value = 0
+---------------
+0 OR 0
+---------------
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+out 6  New-value = 1
+NAND active!
+NAND active!
+NAND active!
+out 12  New-value = 0
+output is 0
+---------------
+0 OR 1
+---------------
+NAND active!
+NAND active!
+NAND active!
+out 24  New-value = 1
+output is 1
+---------------
+1 OR 1
+---------------
+NAND active!
+NAND active!
+NAND active!
+output is 1
+---------------
+1 OR 0
+---------------
+NAND active!
+NAND active!
+NAND active!
+output is 1
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task4.14.expected and ./tests/task4.14.tmp differ
+Files ./tests/task4.14.expected and ./tests/task4.14.tmp are identical
 
 
 Testing task4.scm on task4.15. . .
@@ -3229,9 +3523,59 @@ out 60  New-value = 1
 output is 1
 ------------------------------------
 YOUR RESULTS: 
+
+out 0  New-value = 0
+---------------
+0 XOR 0
+---------------
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+out 6  New-value = 1
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+out 12  New-value = 0
+output is 0
+---------------
+0 XOR 1
+---------------
+NAND active!
+NAND active!
+NAND active!
+out 24  New-value = 1
+output is 1
+---------------
+1 XOR 1
+---------------
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+out 42  New-value = 0
+output is 0
+---------------
+1 XOR 0
+---------------
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+out 60  New-value = 1
+output is 1
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task4.15.expected and ./tests/task4.15.tmp differ
+Files ./tests/task4.15.expected and ./tests/task4.15.tmp are identical
 
 
 Testing task4.scm on task4.16. . .
@@ -3319,9 +3663,56 @@ NAND active!
 output is 0
 ------------------------------------
 YOUR RESULTS: 
+
+out 0  New-value = 0
+---------------
+0 NOR 0
+---------------
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+out 6  New-value = 1
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+out 12  New-value = 0
+NAND active!
+NAND active!
+out 18  New-value = 1
+NAND active!
+output is 1
+---------------
+0 NOR 1
+---------------
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+out 36  New-value = 0
+NAND active!
+output is 0
+---------------
+1 NOR 1
+---------------
+NAND active!
+NAND active!
+NAND active!
+output is 0
+---------------
+1 NOR 0
+---------------
+NAND active!
+NAND active!
+NAND active!
+output is 0
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task4.16.expected and ./tests/task4.16.tmp differ
+Files ./tests/task4.16.expected and ./tests/task4.16.tmp are identical
 
 
 Testing task4.scm on task4.17. . .
@@ -3416,9 +3807,63 @@ NAND active!
 output is 0
 ------------------------------------
 YOUR RESULTS: 
+
+out 0  New-value = 0
+---------------
+0 XNOR 0
+---------------
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+out 6  New-value = 1
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+out 12  New-value = 0
+NAND active!
+out 18  New-value = 1
+output is 1
+---------------
+0 XNOR 1
+---------------
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+out 36  New-value = 0
+output is 0
+---------------
+1 XNOR 1
+---------------
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+out 48  New-value = 1
+NAND active!
+output is 1
+---------------
+1 XNOR 0
+---------------
+NAND active!
+NAND active!
+NAND active!
+NAND active!
+out 60  New-value = 0
+NAND active!
+output is 0
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task4.17.expected and ./tests/task4.17.tmp differ
+Files ./tests/task4.17.expected and ./tests/task4.17.tmp are identical
 
 
 -----------------------------------------------------------------------
