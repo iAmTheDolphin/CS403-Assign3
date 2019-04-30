@@ -4152,9 +4152,13 @@ EXPECTED:
 (same-stream? qs ds 10 0.0010000000) is #t
 ------------------------------------
 YOUR RESULTS: 
+(0.000000e+00,1.0000000000,4.0000000000,9.0000000000,16.000000000,...)
+(0.000000e+00,0.5000000000,3.0000000000,9.5000000000,22.000000000,...)
+(0.000000e+00,1.0000000000,4.0000000000,9.0000000000,16.000000000,...)
+(same-stream? qs ds 10 0.0010000000) is #t
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task6.0.expected and ./tests/task6.0.tmp differ
+Files ./tests/task6.0.expected and ./tests/task6.0.tmp are identical
 
 
 Testing task6.scm on task6.1. . .
@@ -4188,9 +4192,16 @@ EXPECTED:
 (same-stream? ones ones*f 5 0.0999000000) is #f
 ------------------------------------
 YOUR RESULTS: 
+(same-stream? ones ones*f 3 0.0010000000) is #t
+(same-stream? ones ones*f 5 0.0010000000) is #f
+(same-stream? ones ones*f 5 2.0000000000) is #t
+(same-stream? ones ones*f 5 0.2000000000) is #t
+(same-stream? ones ones*f 5 0.1001000000) is #t
+(same-stream? ones ones*f 5 0.1000000000) is #f
+(same-stream? ones ones*f 5 0.0999000000) is #f
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task6.1.expected and ./tests/task6.1.tmp differ
+Files ./tests/task6.1.expected and ./tests/task6.1.tmp are identical
 
 
 Testing task6.scm on task6.2. . .
@@ -4211,9 +4222,13 @@ EXPECTED:
 (same-stream? qs ds 10 0.0010000000) is #t
 ------------------------------------
 YOUR RESULTS: 
+(-1.0000000000,-1.0144897959,-1.0293877551,-1.0446938776,-1.0604081633,...)
+(0.000000e+00,-0.0143892128,-0.0289883382,-0.0438032070,-0.0588396502,...)
+(-1.0000000000,-1.0144897959,-1.0293877551,-1.0446938776,-1.0604081633,...)
+(same-stream? qs ds 10 0.0010000000) is #t
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task6.2.expected and ./tests/task6.2.tmp differ
+Files ./tests/task6.2.expected and ./tests/task6.2.tmp are identical
 
 
 Testing task6.scm on task6.3. . .
@@ -4234,9 +4249,13 @@ EXPECTED:
 (same-stream? qs ds 10 0.0010000000) is #t
 ------------------------------------
 YOUR RESULTS: 
+(-1.0000000000,-1.0743604997,-1.1511005354,-1.2302201071,-1.3117192147,...)
+(0.000000e+00,-0.0252970793,-0.0524368480,-0.0814773436,-0.1124766036,...)
+(-1.0000000000,-1.0743604997,-1.1511005354,-1.2302201071,-1.3117192147,...)
+(same-stream? qs ds 10 0.0010000000) is #t
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task6.3.expected and ./tests/task6.3.tmp differ
+Files ./tests/task6.3.expected and ./tests/task6.3.tmp are identical
 
 
 Testing task6.scm on task6.4. . .
@@ -4257,9 +4276,13 @@ EXPECTED:
 (same-stream? qs ds 10 0.0010000000) is #t
 ------------------------------------
 YOUR RESULTS: 
+(2.0000000000,2.2809917355,2.5785123966,2.8925619834,3.2231404957,...)
+(0.000000e+00,0.1945905334,0.4154770849,0.6641622839,0.9421487602,...)
+(2.0000000000,2.2809917355,2.5785123966,2.8925619834,3.2231404957,...)
+(same-stream? qs ds 10 0.0010000000) is #t
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task6.4.expected and ./tests/task6.4.tmp differ
+Files ./tests/task6.4.expected and ./tests/task6.4.tmp are identical
 
 
 Testing task6.scm on task6.5. . .
@@ -4280,9 +4303,13 @@ EXPECTED:
 (same-stream? qs ds 10 0.0010000000) is #t
 ------------------------------------
 YOUR RESULTS: 
+(2.0000000000,2.0251562500,2.0506250000,2.0764062500,2.1025000000,...)
+(0.000000e+00,0.0251572266,0.0506308594,0.0764248047,0.1025429688,...)
+(2.0000000000,2.0251562500,2.0506250000,2.0764062500,2.1025000000,...)
+(same-stream? qs ds 10 0.0010000000) is #t
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task6.5.expected and ./tests/task6.5.tmp differ
+Files ./tests/task6.5.expected and ./tests/task6.5.tmp are identical
 
 
 Testing task6.scm on task6.6. . .
@@ -4303,9 +4330,13 @@ EXPECTED:
 (same-stream? qs ds 10 0.0010000000) is #t
 ------------------------------------
 YOUR RESULTS: 
+(0.000000e+00,-2.0000000000,-2.0000000000,0.000000e+00,4.0000000000,...)
+(0.000000e+00,-1.0000000000,-3.0000000000,-4.0000000000,-2.0000000000,...)
+(0.000000e+00,-2.0000000000,-2.0000000000,0.000000e+00,4.0000000000,...)
+(same-stream? qs ds 10 0.0010000000) is #t
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task6.6.expected and ./tests/task6.6.tmp differ
+Files ./tests/task6.6.expected and ./tests/task6.6.tmp are identical
 
 
 Testing task6.scm on task6.7. . .
@@ -4326,9 +4357,13 @@ EXPECTED:
 (same-stream? qs ds 10 0.0010000000) is #t
 ------------------------------------
 YOUR RESULTS: 
+(-4.0000000000,-4.0022675737,-4.0090702948,-4.0204081632,-4.0362811791,...)
+(0.000000e+00,-0.1905301802,-0.3812763199,-0.5724543783,-0.7642803150,...)
+(-4.0000000000,-4.0022675737,-4.0090702948,-4.0204081632,-4.0362811791,...)
+(same-stream? qs ds 10 0.0010000000) is #t
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task6.7.expected and ./tests/task6.7.tmp differ
+Files ./tests/task6.7.expected and ./tests/task6.7.tmp are identical
 
 
 Testing task6.scm on task6.8. . .
@@ -4349,9 +4384,13 @@ EXPECTED:
 (same-stream? qs ds 10 0.0010000000) is #t
 ------------------------------------
 YOUR RESULTS: 
+(3.0000000000,3.0743604997,3.1511005354,3.2302201071,3.3117192147,...)
+(0.000000e+00,0.0740775671,0.1499978236,0.2278188070,0.3075985548,...)
+(3.0000000000,3.0743604997,3.1511005354,3.2302201071,3.3117192147,...)
+(same-stream? qs ds 10 0.0010000000) is #t
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task6.8.expected and ./tests/task6.8.tmp differ
+Files ./tests/task6.8.expected and ./tests/task6.8.tmp are identical
 
 
 Testing task6.scm on task6.9. . .
@@ -4372,9 +4411,13 @@ EXPECTED:
 (same-stream? qs ds 10 0.0010000000) is #t
 ------------------------------------
 YOUR RESULTS: 
+(1.0000000000,1.0494490728,1.0994356354,1.1499596880,1.2010212306,...)
+(0.000000e+00,0.0167987629,0.0344125719,0.0528502385,0.0721205739,...)
+(1.0000000000,1.0494490728,1.0994356354,1.1499596880,1.2010212306,...)
+(same-stream? qs ds 10 0.0010000000) is #t
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task6.9.expected and ./tests/task6.9.tmp differ
+Files ./tests/task6.9.expected and ./tests/task6.9.tmp are identical
 
 
 -----------------------------------------------------------------------
