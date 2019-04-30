@@ -3881,13 +3881,10 @@ EXPECTED:
 (0,1,1,1,1,2,2,1,3,3,1,4,...)
 ------------------------------------
 YOUR RESULTS: 
-1 1 1 1 1 ...
-------------------------------------
-EXCEPTION: generalException
-file main.lib,line 428: attempt to take car of type INTEGER
+(0,1,1,1,1,2,2,1,3,3,1,4,...)
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task5.0.expected and ./tests/task5.0.tmp differ
+Files ./tests/task5.0.expected and ./tests/task5.0.tmp are identical
 
 
 Testing task5.scm on task5.1. . .
@@ -3910,13 +3907,11 @@ op is <builtin -(@)>
 ------------------------------------
 YOUR RESULTS: 
 op is <builtin -(@)>
-1 1 1 1 1 ...
-------------------------------------
-EXCEPTION: generalException
-file main.lib,line 428: attempt to take car of type INTEGER
+(-24,74,99,20,84,-6,-82,-7,3,61,58,-19,...)
+(0,-24,-24,1,74,-98,2,99,-197,3,20,-217,...)
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task5.1.expected and ./tests/task5.1.tmp differ
+Files ./tests/task5.1.expected and ./tests/task5.1.tmp are identical
 
 
 Testing task5.scm on task5.2. . .
@@ -3939,13 +3934,11 @@ op is <builtin -(@)>
 ------------------------------------
 YOUR RESULTS: 
 op is <builtin -(@)>
-1 1 1 1 1 ...
-------------------------------------
-EXCEPTION: generalException
-file main.lib,line 428: attempt to take car of type INTEGER
+(-6,-19,41,89,-72,-83,10,-94,73,81,83,-14,...)
+(0,-6,-6,1,-19,13,2,41,-28,3,89,-117,...)
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task5.2.expected and ./tests/task5.2.tmp differ
+Files ./tests/task5.2.expected and ./tests/task5.2.tmp are identical
 
 
 Testing task5.scm on task5.3. . .
@@ -3968,13 +3961,11 @@ op is <builtin +(@)>
 ------------------------------------
 YOUR RESULTS: 
 op is <builtin +(@)>
-1 1 1 1 1 ...
-------------------------------------
-EXCEPTION: generalException
-file main.lib,line 428: attempt to take car of type INTEGER
+(-89,-14,-19,-43,-31,38,-1,16,42,99,-93,87,...)
+(0,-89,-89,1,-14,-103,2,-19,-122,3,-43,-165,...)
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task5.3.expected and ./tests/task5.3.tmp differ
+Files ./tests/task5.3.expected and ./tests/task5.3.tmp are identical
 
 
 Testing task5.scm on task5.4. . .
@@ -3997,13 +3988,11 @@ op is <builtin *(@)>
 ------------------------------------
 YOUR RESULTS: 
 op is <builtin *(@)>
-1 1 1 1 1 ...
-------------------------------------
-EXCEPTION: generalException
-file main.lib,line 428: attempt to take car of type INTEGER
+(-73,-9,-79,24,-90,-40,-11,26,11,-82,30,89,...)
+(0,-73,-73,1,-9,657,2,-79,-51903,3,24,-1245672,...)
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task5.4.expected and ./tests/task5.4.tmp differ
+Files ./tests/task5.4.expected and ./tests/task5.4.tmp are identical
 
 
 Testing task5.scm on task5.5. . .
@@ -4026,13 +4015,11 @@ op is <builtin -(@)>
 ------------------------------------
 YOUR RESULTS: 
 op is <builtin -(@)>
-1 1 1 1 1 ...
-------------------------------------
-EXCEPTION: generalException
-file main.lib,line 428: attempt to take car of type INTEGER
+(-56,-4,61,-7,51,-18,-21,-62,80,-62,-46,-7,...)
+(0,-56,-56,1,-4,-52,2,61,-113,3,-7,-106,...)
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task5.5.expected and ./tests/task5.5.tmp differ
+Files ./tests/task5.5.expected and ./tests/task5.5.tmp are identical
 
 
 Testing task5.scm on task5.6. . .
@@ -4055,13 +4042,11 @@ op is <builtin +(@)>
 ------------------------------------
 YOUR RESULTS: 
 op is <builtin +(@)>
-1 1 1 1 1 ...
-------------------------------------
-EXCEPTION: generalException
-file main.lib,line 428: attempt to take car of type INTEGER
+(59,0,-99,-40,-8,3,67,-53,-51,-45,75,-7,...)
+(0,59,59,1,0,59,2,-99,-40,3,-40,-80,...)
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task5.6.expected and ./tests/task5.6.tmp differ
+Files ./tests/task5.6.expected and ./tests/task5.6.tmp are identical
 
 
 Testing task5.scm on task5.7. . .
@@ -4084,13 +4069,11 @@ op is <builtin -(@)>
 ------------------------------------
 YOUR RESULTS: 
 op is <builtin -(@)>
-1 1 1 1 1 ...
-------------------------------------
-EXCEPTION: generalException
-file main.lib,line 428: attempt to take car of type INTEGER
+(-23,-93,-58,29,35,-73,-41,60,-80,75,-98,98,...)
+(0,-23,-23,1,-93,70,2,-58,128,3,29,99,...)
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task5.7.expected and ./tests/task5.7.tmp differ
+Files ./tests/task5.7.expected and ./tests/task5.7.tmp are identical
 
 
 Testing task5.scm on task5.8. . .
@@ -4113,13 +4096,11 @@ op is <builtin *(@)>
 ------------------------------------
 YOUR RESULTS: 
 op is <builtin *(@)>
-1 1 1 1 1 ...
-------------------------------------
-EXCEPTION: generalException
-file main.lib,line 428: attempt to take car of type INTEGER
+(94,12,-18,96,76,-51,-51,-29,-11,-6,25,1,...)
+(0,94,94,1,12,1128,2,-18,-20304,3,96,-1949184,...)
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task5.8.expected and ./tests/task5.8.tmp differ
+Files ./tests/task5.8.expected and ./tests/task5.8.tmp are identical
 
 
 Testing task5.scm on task5.9. . .
@@ -4142,13 +4123,11 @@ op is <builtin *(@)>
 ------------------------------------
 YOUR RESULTS: 
 op is <builtin *(@)>
-1 1 1 1 1 ...
-------------------------------------
-EXCEPTION: generalException
-file main.lib,line 428: attempt to take car of type INTEGER
+(-89,-83,22,-35,-82,-30,39,-19,-42,-86,-51,-97,...)
+(0,-89,-89,1,-83,7387,2,22,162514,3,-35,-5687990,...)
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task5.9.expected and ./tests/task5.9.tmp differ
+Files ./tests/task5.9.expected and ./tests/task5.9.tmp are identical
 
 
 -----------------------------------------------------------------------
