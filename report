@@ -4717,12 +4717,10 @@ EXPECTED:
 (1729,...)
 ------------------------------------
 YOUR RESULTS: 
-------------------------------------
-EXCEPTION: generalException
-file go.lib,line 1: too few arguments to function main
+(1729,...)
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task8.0.expected and ./tests/task8.0.tmp differ
+Files ./tests/task8.0.expected and ./tests/task8.0.tmp are identical
 
 
 Testing task8.scm on task8.1. . .
@@ -4734,11 +4732,9 @@ EXPECTED:
 (1729,4104,13832,20683,32832,39312,...)
 ------------------------------------
 YOUR RESULTS: 
-------------------------------------
-EXCEPTION: generalException
-file go.lib,line 1: too few arguments to function main
+(1729,4104,13832,20683,32832,39312,...)
 ------------------------------------
 Running diff on the results. . .
-Files ./tests/task8.1.expected and ./tests/task8.1.tmp differ
+Files ./tests/task8.1.expected and ./tests/task8.1.tmp are identical
 
 
