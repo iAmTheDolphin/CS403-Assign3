@@ -30,7 +30,7 @@
             (if (eq? 0.0 (+ s0 (* -2.0 s1) s2))
 
                 (cons-stream (- s2 (/  (square (- s2 s1))
-                                        0.000000000000000000000000000001))
+                                        0.000000000000000000000000000001)) ; to fix a divide by 0 problem
                             (euler-transform (stream-cdr s)))
 
                 (cons-stream (- s2 (/  (square (- s2 s1))

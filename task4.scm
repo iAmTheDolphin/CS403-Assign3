@@ -77,6 +77,7 @@
     )
 )
 
+; cant be a composite. too slow
 (define (xnor-gate a b c) 
     (let (
             (a-not (make-wire))

@@ -1,3 +1,32 @@
+;;
+;;  Parker Jones
+;;
+;;
+;;
+;; spec : 
+    ; Define a series of functions for mathematically manipulating a quadratic equation represented as a stream. The first,
+    ; quad, takes the three coefficients of the quadratic plus a step value. For example, (quad 1 3 -4 0.01) would produce
+    ; the stream representing the equation f = x
+    ; 2 + 3x − 4. The step argument, s, gives the distance between evaluations of
+    ; the quadratic, starting at zero. The stream produced would be equivalent to (f(0), f(s), f(2s), f(3s), ...).
+    ; The second function, integrate, produces a stream representing the integral of the given stream. You should use the
+    ; trapezoid method to compute the area under the curve. The first element of the integrated stream would be zero; the
+    ; second element would be computed from a trapezoid having f(0) as the left height and f(s) as the right height. The
+    ; integrate function takes two arguments, the stream to integrate and the step size. The i
+    ; th element of the resulting
+    ; stream should approximate:
+    ; ∫ i∗s
+    ; 0
+    ; f(x)dx
+    ; The third function, derivate, produces a stream representing the derivative of the given stream. It should reverse the
+    ; integration process. The derivate function takes three arguments, the stream to differentiate, the step size, and a
+    ; constant. If f(0) is given as the constant, then an integrated quadratic stream passed to derivate should produce the
+    ; original quadratic stream.
+    ; A fourth function, same-stream? will help you decide if a differentiated integral stream is the same as the original
+    ; stream. Given two streams, s1 and s2, a count n, and a positive threshold t, returns true if all of the first nth elements
+    ; (piecewise) differ by less than t and false otherwise.
+
+
 (define (sdisplay num stream)
     (define (helper n str)
         (cond 
@@ -13,7 +42,7 @@
     (print ")")
 ) 
 
-; you know the drill x - y take the abs and compare to threshhold, blah blah blah
+; you know the drill. x - y take the abs and compare to threshhold, blah blah blah
 (define (same-stream? s1 s2 count thr)
     (define num1 (stream-car s1))
     (define num2 (stream-car s2))
@@ -65,10 +94,11 @@
     (cons-stream (real 0) (helper (stream-car str) (stream-cdr str)))
 )
 
-(define (quad x2 x c step)
+; simulate a quadratic equation ax^2 + bx + c
+(define (quad a b c step)
     (define (helper next-x)
-        (define first-num (* x2 (* 1.0 next-x next-x) ))
-        (define second-num (* 1.0 x next-x))
+        (define first-num (* a (* 1.0 next-x next-x) ))
+        (define second-num (* 1.0 b next-x))
         (cons-stream (+ first-num second-num c) (helper (+ next-x step)) )
     )
     (helper 0)

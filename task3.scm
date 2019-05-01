@@ -1,4 +1,31 @@
+;;
+;;  Parker Jones
+;;  
+;;
+;;  Basically a doubly linked list. nothing fancy here
+;;
+;; spec : 
+    ;;Define a double-ended queue class called deque. Your class should support the following methods:
+    ; ((dq'enqueueFront) value)
+    ; ((dq'enqueueBack) value)
+    ; ((dq'enqueueIndex) index value)
+    ; ((dq'dequeueFront))
+    ; ((dq'dequeueBack))
+    ; ((dq'dequeueIndex) index)
+    ; ((dq'display))
+    ; ((dq'peekFront))
+    ; ((dq'peekBack))
+    ; (dq'size)
+    ; The enqueue methods should return the item enqueued while the dequeue methods should return the item dequeued.
+    ; All methods should run in constant time except enqueueIndex and dequeueIndex. The enqueueIndex method runs
+    ; in constant time when the index is a constant distance from the front and in linear time otherwise. Likewise, the
+    ; dequeueIndex method runs in constant time when the index is a constant distance from the back and in linear time
+    ; otherwise. The enqueueIndex function places the new value such that it occupies the given index, using zero-based
+    ; counting. The dequeueIndex also uses zero-based counting and returns the item dequeued. The display function prints
+    ; out the values in the dequeue, separated by commas with no added spaces.
+
 (define (debug @) (define db? #t) (if db? (apply println @)))
+
 
 (define (deque)
 

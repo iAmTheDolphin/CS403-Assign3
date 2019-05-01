@@ -1,4 +1,28 @@
 
+;;
+;;  Parker Jones
+;;
+;;
+;; spec : 
+    ; Define a function named smush that takes a stream of the form (a, b, c, d, ...) and the operator Φ and returns the stream
+    ; ((0, a, a),(1, b, aΦb),(2, c, aΦbΦc),(3, d, aΦbΦcΦd), ...), only flattened. You will also need to define a stream displaying
+    ; function named sdisplay. See the example below for its behavior.
+    ; Example:
+    ; $ cat task5.args
+    ; (define ones (cons-stream 1 ones))
+    ; (sdisplay 12 (smush ones +))
+    ; (println)
+    ; $ scam -r task5.scm task5.args
+    ; (0,1,1,1,1,2,2,1,3,3,1,4,...)
+    ; $
+    ; For every triplet, the first number, i, is the index of the second number in the original stream. The third number is the
+    ; accumulation of the first zero through i elements. Use left associativity when combining.
+
+
+
+
+
+
 ; 0 1 2 3 4 5 6 7 8 9 ... wholes
 ; 1 1 1 1 1 1 1 1 1 1 ... ones
 ; 1 2 3 4 5 6 7 8 9 10 ... ones smushed with +
